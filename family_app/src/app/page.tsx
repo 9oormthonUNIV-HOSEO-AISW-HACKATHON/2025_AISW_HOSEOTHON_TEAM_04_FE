@@ -2,9 +2,8 @@
 
 import React, { useState } from 'react';
 import { Heart } from 'lucide-react';
-import { useRouter } from 'next/navigation'; // 라우터 추가
-// globals.css는 layout.tsx에서 이미 불러오므로 여기서는 생략해도 되지만, 
-// 명시적으로 두셔도 상관없습니다.
+import { useRouter } from 'next/navigation';
+import styles from './login.module.css'; // 스타일 불러오기
 
 export default function Home() {
   const router = useRouter();
@@ -12,48 +11,48 @@ export default function Home() {
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    // 로그인 성공 시라고 가정하고 페이지 이동
+    // 로그인 성공 가정 -> 가족 연결 페이지로 이동
     router.push('/connect'); 
   };
 
   return (
     <div className="container">
-      {/* 1. 로고 영역 */}
-      <div className="logo-wrapper">
-        <div className="logo-circle">
+      <div className={styles.logoWrapper}>
+        <div className={styles.logoCircle}>
           <Heart size={48} color="white" />
         </div>
         <h1>가족 이야기</h1>
         <p>따뜻한 소통의 시작</p>
       </div>
 
-      {/* 2. 입력 폼 */}
-      <div className="form-wrapper">
+      <div className={styles.formWrapper}>
         <div>
           <label>이메일</label>
           <input
             type="email"
-            placeholder="이메일을 입력하세요"
+            placeholder="이메일 입력"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            className={styles.input}
           />
         </div>
         <div>
           <label>비밀번호</label>
           <input
             type="password"
-            placeholder="비밀번호를 입력하세요"
+            placeholder="비밀번호 입력"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            className={styles.input}
           />
         </div>
-        <button className="login-btn" onClick={handleLogin}>
+
+        <button className={styles.loginBtn} onClick={handleLogin}>
           로그인
         </button>
 
         <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
-          {/* 회원가입 페이지로 이동 */}
-          <button className="signup-btn" onClick={() => router.push('/signup')}>
+          <button className={styles.signupBtn} onClick={() => router.push('/signup')}>
             계정이 없으신가요? 회원가입
           </button>
         </div>

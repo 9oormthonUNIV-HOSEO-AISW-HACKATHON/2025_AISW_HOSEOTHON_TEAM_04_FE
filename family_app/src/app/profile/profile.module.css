@@ -1,0 +1,102 @@
+/* src/app/profile/profile.module.css */
+
+.profileHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+}
+
+/* 🚨 👇 여기 있던 .avatar 스타일을 완전히 삭제했습니다! 👇 🚨 */
+
+.name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.familyBadge {
+  background-color: #fff4e6;
+  color: #ff8c00; /* 여기도 살짝 진한 오렌지로 포인트 */
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* --- 가족 리스트 영역 --- */
+
+.sectionHeader {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding-left: 4px;
+}
+
+.sectionTitle {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.familyList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* 👇 [대폭 수정] 둥근 사각형 + 파스텔톤 색상 적용 */
+.familyItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  /* 배경색: 아주 연한 살구색으로 따뜻하게 */
+  background-color: #FFF8E1; 
+  
+  /* 테두리: 포인트 컬러인 살구색 사용 */
+  border: 2px solid var(--color-apricot);
+  
+  /* 둥근 모서리 강조 */
+  border-radius: 20px;
+  
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02); /* 살짝 입체감 */
+  transition: transform 0.2s;
+}
+
+/* 마우스 올리면 살짝 떠오르는 효과 (선택사항) */
+.familyItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(255, 204, 128, 0.2); /* 살구색 그림자 */
+}
+
+.memberName {
+  font-size: 1.1rem;
+  font-weight: 700; /* 이름 좀 더 진하게 */
+  color: #333;
+}
+
+/* 역할 배지: 민트색으로 포인트 유지 */
+.roleBadge {
+  font-size: 0.9rem;
+  color: #2E7D32; /* 글씨는 진한 녹색 */
+  background-color: var(--color-mint); /* 배경은 연두색 */
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.logoutBtn {
+  margin-top: 3rem;
+  color: var(--color-gray);
+  background: none;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.9rem;
+}

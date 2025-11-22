@@ -1,0 +1,38 @@
+/* 로그인 스타일과 비슷하지만 별도 관리 */
+.logoWrapper { text-align: center; margin-bottom: 2rem; }
+
+.logoCircle {
+  width: 80px; height: 80px;
+  background-color: var(--color-apricot);
+  border-radius: 50%;
+  display: flex; justify-content: center; align-items: center;
+  margin: 0 auto 1rem auto;
+}
+
+.logoWrapper h1 { font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem; }
+.logoWrapper p { color: var(--color-gray); font-size: 1rem; }
+
+.formWrapper { display: flex; flex-direction: column; gap: 1.2rem; }
+.formWrapper label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
+
+.input {
+  width: 100%; padding: 0.9rem;
+  border: 1px solid #eee; border-radius: 12px;
+  background-color: var(--color-bg);
+  transition: border-color 0.2s;
+}
+.input:focus { outline: none; border-color: var(--color-apricot); background-color: white; }
+
+.createBtn {
+  width: 100%; padding: 1rem;
+  background-color: var(--color-gold);
+  color: var(--color-dark);
+  border: none; border-radius: 12px;
+  font-size: 1.1rem; font-weight: bold; cursor: pointer; margin-top: 1rem;
+}
+.createBtn:hover { filter: brightness(0.95); transform: translateY(-2px); }
+
+.backBtn {
+  align-self: flex-start; background: none; border: none;
+  cursor: pointer; margin-bottom: 1rem; color: var(--color-gray);
+}

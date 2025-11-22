@@ -1,0 +1,45 @@
+/* src/components/BottomTab.module.css */
+
+.wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px; /* 탭 높이 */
+  background-color: white;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-around; /* 간격 균등 배치 */
+  align-items: center;
+  z-index: 100; /* 다른 요소 위에 뜨게 */
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.03);
+  
+  /* PC 화면에서도 모바일처럼 보이게 너비 제한 (선택사항) */
+  max-width: 450px; 
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tabItem {
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+  color: var(--color-gray); /* 기본색: 회색 */
+  padding: 0.5rem;
+  transition: color 0.2s;
+}
+
+.tabItem span {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* 활성화된 탭 스타일 */
+.active {
+  color: var(--color-gold); /* 선택된 탭: 노란색(Soft Gold) */
+}
