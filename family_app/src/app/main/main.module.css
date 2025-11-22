@@ -1,89 +1,117 @@
 /* src/app/main/main.module.css */
 
 .container {
-  /* 하단 탭에 가려지지 않게 여백 추가 */
-  padding-bottom: 80px !important; 
-  /* 부모 container 스타일 상속받으면서 정렬 */
+  /* 하단 탭 공간 확보 및 전체 정렬 */
+  padding-bottom: 90px !important; 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* 내용은 위에서부터 시작 */
-  padding-top: 3rem;
+  justify-content: center; /* 화면 정중앙에 오도록 */
+  min-height: 100vh;
+  padding-left: 1rem; /* 여백을 1.5rem에서 1rem으로 줄임 */
+  padding-right: 1rem;
 }
 
-.dateText {
-  color: var(--color-gray);
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-}
-
+/* "오늘의 질문" 타이틀은 카드 밖에 둠 */
 .pageTitle {
-  font-size: 1.8rem;
+  font-size: 1.4rem; /* 1.6rem -> 1.4rem */
   font-weight: bold;
-  color: #333; /* 제목은 진하게 */
-  margin-bottom: 2rem;
+  color: var(--color-dark);
+  margin-bottom: 1rem; /* 간격도 조금 줄임 */
+  text-align: center;
 }
 
+/* 👇 [핵심 수정] 질문 카드 디자인: 흰색 배경으로 대비 확보 */
 .questionCard {
   width: 100%;
-  text-align: center;
+  max-width: 400px;
+  background-color: var(--color-bg-warm);
+  border: 2px solid var(--color-apricot);
+  border-radius: 24px;
+  padding: 1.5rem 1.2rem; /* 내부 패딩을 2rem에서 1.5rem으로 줄임 */
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  
+  /* 🪄 [강화] 그림자 효과를 더 크고 선명하게 */
+  box-shadow: 0 15px 40px rgba(255, 204, 128, 0.35); /* 높이와 번짐을 증가 */
+}
+
+/* 👇 [수정] 날짜: 살구색 배경의 깔끔한 뱃지 */
+.dateText {
+  display: inline-block;
+  font-size: 0.85rem;
+  
+  /* 배경: 살구색 */
+  background-color: var(--color-apricot);
+  color: white; /* 텍스트는 흰색으로 깔끔하게 */
+  
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
 }
 
 .questionText {
-  font-size: 1.2rem;
-  line-height: 1.6;
+  font-size: 1.3rem; /* 1.4rem -> 1.3rem */
+  font-weight: bold;
+  line-height: 1.5;
   color: var(--color-dark);
-  margin-bottom: 1.5rem;
-  word-break: keep-all; /* 한글 줄바꿈 예쁘게 */
+  margin-bottom: 1.5rem; /* 간격도 줄임 */
+  word-break: keep-all;
 }
 
-/* 답변 현황 점(Dot) 스타일 */
+/* 답변 현황 (점) */
 .statusWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.8rem;
   margin-bottom: 2rem;
+  width: 100%;
 }
 
 .dotsContainer {
   display: flex;
-  gap: 8px;
+  gap: 10px;
 }
 
 .statusDot {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  background-color: #eee; /* 기본: 회색 (답변 안함) */
+  background-color: #eee;
   transition: background-color 0.3s;
 }
 
+/* 👇 [유지] 답변 완료 시 민트색으로 대비 */
 .statusDot.answered {
-  background-color: var(--color-mint); /* 답변 완료: 연두색 */
+  background-color: var(--color-mint); 
+  box-shadow: 0 0 5px var(--color-mint);
 }
 
 .statusText {
   font-size: 0.9rem;
   color: var(--color-gray);
+  font-weight: 500;
 }
 
-/* 버튼 스타일 */
+/* 답변하기 버튼 (Gold 유지) */
 .answerBtn {
   width: 100%;
-  padding: 1rem;
-  background-color: var(--color-gold); /* 포인트: 노란색 */
-  color: #333; /* 노란 배경엔 진한 글씨 */
+  padding: 0.9rem; /* 1.1rem -> 0.9rem */
+  font-size: 1rem; /* 1.1rem -> 1rem */
+  background-color: var(--color-gold);
+  color: #333;
   font-weight: bold;
-  font-size: 1.1rem;
   border: none;
-  border-radius: 50px; /* 둥근 버튼 */
+  border-radius: 16px;
   cursor: pointer;
   margin-bottom: 1rem;
-  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.2); /* 노란 그림자 */
+  
+  /* 🪄 [강화] 버튼 그림자도 살짝 강화 */
+  box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4); 
   transition: transform 0.2s;
 }
 
@@ -92,6 +120,7 @@
   filter: brightness(0.95);
 }
 
+/* 이전 질문 보기 링크 */
 .viewHistoryBtn {
   background: none;
   border: none;
@@ -99,4 +128,9 @@
   font-size: 0.9rem;
   cursor: pointer;
   text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.viewHistoryBtn:hover {
+  color: var(--color-apricot);
 }

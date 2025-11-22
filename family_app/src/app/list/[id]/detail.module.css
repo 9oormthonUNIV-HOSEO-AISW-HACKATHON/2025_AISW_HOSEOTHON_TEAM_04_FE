@@ -4,7 +4,7 @@
   width: 100%;
   display: flex;
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem; /* 간격 축소 */
   gap: 0.5rem;
 }
 
@@ -27,7 +27,7 @@
 /* 질문 섹션 */
 .questionSection {
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem; /* 간격 축소 */
 }
 
 .date {
@@ -37,36 +37,39 @@
   display: block;
 }
 
+/* 👇 [수정] 질문 텍스트 크기 축소 */
 .questionText {
-  font-size: 1.4rem;
+  font-size: 1.2rem; /* 1.4rem -> 1.2rem */
   font-weight: bold;
   color: #333;
   line-height: 1.4;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem; /* 간격 축소 */
 }
 
-/* AI 분석 버튼 (민트색 포인트) */
+/* 👇 [수정] AI 분석 버튼 */
 .aiAnalysisBtn {
   width: 100%;
-  padding: 1rem;
-  background-color: var(--color-mint); /* 민트색 */
+  padding: 0.9rem; /* 간격 축소 */
+  background-color: var(--color-mint); 
   color: white;
   border: none;
   border-radius: 16px;
-  font-size: 1rem;
+  font-size: 0.95rem; /* 폰트 크기 축소 */
   font-weight: bold;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 4px 10px rgba(165, 214, 167, 0.3);
+  
+  /* 🪄 [강화] 그림자 효과 강화 */
+  box-shadow: 0 8px 25px rgba(165, 214, 167, 0.4); 
   transition: transform 0.2s;
 }
 
 .aiAnalysisBtn:hover {
   transform: translateY(-2px);
-  filter: brightness(0.95);
+  filter: brightness(0.9);
 }
 
 /* 답변 리스트 섹션 */
@@ -74,35 +77,39 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  padding-bottom: 80px; /* 하단 탭 여백 */
+  gap: 0.8rem; /* 간격 축소 */
+  padding-bottom: 80px;
 }
 
 .sectionLabel {
   font-size: 1rem;
   font-weight: bold;
   color: var(--color-gray);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem; /* 간격 축소 */
 }
 
+/* 👇 [수정] 답변 카드 */
 .answerCard {
   background-color: white;
-  padding: 1.2rem;
+  padding: 1rem; /* 패딩 축소 */
   border-radius: 16px;
   border: 1px solid #f0f0f0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+  
+  /* 🪄 [강화] 그림자 효과 추가 */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
 }
 
 .writerName {
   font-size: 0.95rem;
   font-weight: bold;
-  color: var(--color-apricot); /* 이름은 살구색 포인트 */
+  color: var(--color-apricot);
   margin-bottom: 0.5rem;
   display: block;
 }
 
+/* 👇 [수정] 답변 내용 폰트 크기 축소 */
 .answerContent {
-  font-size: 1rem;
+  font-size: 0.95rem; /* 1rem -> 0.95rem */
   color: #444;
   line-height: 1.5;
 }

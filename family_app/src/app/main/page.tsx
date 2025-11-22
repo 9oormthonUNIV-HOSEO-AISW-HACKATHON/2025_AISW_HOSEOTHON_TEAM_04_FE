@@ -3,8 +3,10 @@
 import React from 'react';
 import BottomTab from '../../components/Features/BottomTab';
 import styles from './main.module.css'; // 👈 스타일 연결
+import { useRouter } from 'next/navigation'; // 1. router import 확인
 
 export default function MainPage() {
+    const router = useRouter(); // 2. router 사용 선언
   const today = new Date().toLocaleDateString('ko-KR', {
     year: 'numeric',
     month: 'long',
@@ -53,12 +55,18 @@ export default function MainPage() {
         </div>
 
         {/* 답변하기 버튼 */}
-        <button className={styles.answerBtn}>
+        <button 
+          className={styles.answerBtn} 
+          onClick={() => router.push('/answer')} // 👈 여기 추가!
+        >
           답변하기
         </button>
 
         {/* 이전 질문들 보기 링크 */}
-        <button className={styles.viewHistoryBtn}>
+        <button 
+          className={styles.viewHistoryBtn}
+          onClick={() => router.push('/list')} 
+        >
           이전 질문들 보기 →
         </button>
       </div>

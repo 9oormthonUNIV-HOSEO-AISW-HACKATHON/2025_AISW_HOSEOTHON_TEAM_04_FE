@@ -5,12 +5,12 @@
   margin-bottom: 1.5rem;
 }
 .header h1 {
-  font-size: 1.5rem;
+  font-size: 1.4rem; /* 1.5rem -> 1.4rem */
   font-weight: bold;
   color: #333;
 }
 .header p {
-  color: var(--color-gray);
+  color: var(--color-gray); /* 변수 사용 */
   font-size: 0.9rem;
   margin-top: 0.3rem;
 }
@@ -20,43 +20,70 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding-bottom: 80px; /* 하단 탭 공간 확보 */
+  padding-bottom: 80px;
 }
 
+/* 👇 [수정] 따뜻한 느낌의 카드 (변수 활용) */
 .card {
-  background-color: white;
-  padding: 1.2rem;
-  border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-  border: 1px solid #f0f0f0;
+  /* 배경색 등은 그대로 유지 */
+  background-color: var(--color-bg-warm); 
+  border: 1px solid var(--color-apricot);
+  
+  /* 내부 패딩 조정 (홈 화면과 일치하도록) */
+  padding: 1rem 1.2rem; 
+  border-radius: 20px;
+  
+  /* 🪄 [강화] 그림자 효과 강화 (더 진하고 넓게) */
+  box-shadow: 0 8px 25px rgba(255, 204, 128, 0.25);
+  
   cursor: pointer;
-  transition: transform 0.2s;
-}
-.card:hover {
-  transform: translateY(-2px);
-  border-color: var(--color-apricot);
+  transition: all 0.2s ease;
+  position: relative;
 }
 
+.card:hover {
+  transform: translateY(-3px);
+  /* 호버 시 색상을 조금 더 진한 살구색으로 변경 */
+  border-color: var(--color-gold); 
+  box-shadow: 0 10px 30px rgba(255, 204, 128, 0.35);
+}
+
+/* 👇 [수정] 날짜 배지 (민트색 활용) */
 .date {
+  display: inline-block;
   font-size: 0.8rem;
-  color: var(--color-mint); /* 날짜는 민트색 포인트 */
+  
+  /* 글씨는 흰색, 배경은 민트색 변수 사용 */
+  color: white; 
+  background-color: var(--color-mint);
+  
+  padding: 4px 10px;
+  border-radius: 12px;
   font-weight: 600;
-  margin-bottom: 0.5rem;
-  display: block;
+  margin-bottom: 0.8rem;
 }
 
 .question {
-  font-size: 1rem;
+  font-size: 1.05rem; /* 1.1rem -> 1.05rem */
   font-weight: bold;
-  color: #333;
-  margin-bottom: 0.5rem;
+  color: #4E342E;
+  margin-bottom: 0.8rem;
   line-height: 1.4;
 }
 
 .answerCount {
   font-size: 0.85rem;
-  color: var(--color-gray);
+  color: var(--color-gray); /* 변수 사용 */
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
+  font-weight: 500;
+}
+
+/* 화살표 장식 */
+.answerCount::after {
+  content: '→';
+  margin-left: auto;
+  font-size: 1.2rem;
+  color: var(--color-apricot); /* 변수 사용 */
 }

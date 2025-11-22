@@ -30,6 +30,10 @@ export default function ProfilePage() {
       <div className={styles.profileHeader}>
         <h2 className={styles.name}>김민수</h2>
         <span className={styles.familyBadge}>🏡 행복한 우리집</span>
+        {/* 로그아웃 */}
+      <button className={styles.logoutBtn} onClick={handleLogout}>
+        로그아웃
+      </button>
       </div>
 
       {/* 2. 가족 구성원 리스트 */}
@@ -48,12 +52,6 @@ export default function ProfilePage() {
           </div>
         ))}
       </div>
-
-      {/* 로그아웃 */}
-      <button className={styles.logoutBtn} onClick={handleLogout}>
-        로그아웃
-      </button>
-
       <BottomTab />
     </div>
   );

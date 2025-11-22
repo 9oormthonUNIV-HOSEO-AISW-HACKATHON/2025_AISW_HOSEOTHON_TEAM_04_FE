@@ -4,16 +4,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 2rem;
-  padding-bottom: 2rem;
+  /* 마진 및 구분선 조정 */
+  margin-bottom: 1.5rem; 
+  padding-bottom: 1.5rem;
   border-bottom: 1px solid #eee;
   width: 100%;
 }
 
-/* 🚨 👇 여기 있던 .avatar 스타일을 완전히 삭제했습니다! 👇 🚨 */
-
+/* 👇 [수정] 내 이름 폰트 크기 축소 */
 .name {
-  font-size: 1.8rem;
+  font-size: 1.6rem; /* 1.8rem -> 1.6rem */
   font-weight: bold;
   color: #333;
   margin-bottom: 0.5rem;
@@ -21,7 +21,7 @@
 
 .familyBadge {
   background-color: #fff4e6;
-  color: #ff8c00; /* 여기도 살짝 진한 오렌지로 포인트 */
+  color: #ff8c00;
   padding: 0.4rem 0.8rem;
   border-radius: 20px;
   font-size: 0.9rem;
@@ -32,12 +32,12 @@
 
 .sectionHeader {
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   padding-left: 4px;
 }
 
 .sectionTitle {
-  font-size: 1.1rem;
+  font-size: 1rem; /* 1.1rem -> 1rem */
   font-weight: bold;
   color: #333;
 }
@@ -46,53 +46,51 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.6rem; /* 간격 축소 */
 }
 
-/* 👇 [대폭 수정] 둥근 사각형 + 파스텔톤 색상 적용 */
 .familyItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
   
-  /* 배경색: 아주 연한 살구색으로 따뜻하게 */
-  background-color: #FFF8E1; 
+  /* 카드 배경: Warm Tone 사용 */
+  background-color: var(--color-bg-warm);
+  border: 1px solid var(--color-apricot);
   
-  /* 테두리: 포인트 컬러인 살구색 사용 */
-  border: 2px solid var(--color-apricot);
+  /* 패딩 축소 */
+  padding: 1rem 1.2rem; 
+  border-radius: 16px;
   
-  /* 둥근 모서리 강조 */
-  border-radius: 20px;
+  /* 🪄 [강화] 그림자 효과 강화 (Home, List와 동일) */
+  box-shadow: 0 8px 25px rgba(255, 204, 128, 0.25); 
   
-  padding: 1.2rem 1.5rem;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.02); /* 살짝 입체감 */
   transition: transform 0.2s;
 }
 
-/* 마우스 올리면 살짝 떠오르는 효과 (선택사항) */
 .familyItem:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(255, 204, 128, 0.2); /* 살구색 그림자 */
+  box-shadow: 0 10px 30px rgba(255, 204, 128, 0.35);
 }
 
+/* 👇 [수정] 구성원 이름 폰트 크기 축소 */
 .memberName {
-  font-size: 1.1rem;
-  font-weight: 700; /* 이름 좀 더 진하게 */
+  font-size: 1rem; /* 1.1rem -> 1rem */
+  font-weight: 700;
   color: #333;
 }
 
-/* 역할 배지: 민트색으로 포인트 유지 */
 .roleBadge {
   font-size: 0.9rem;
-  color: #2E7D32; /* 글씨는 진한 녹색 */
-  background-color: var(--color-mint); /* 배경은 연두색 */
-  padding: 6px 12px;
-  border-radius: 12px;
+  color: #2E7D32;
+  background-color: var(--color-mint);
+  padding: 4px 10px;
+  border-radius: 8px;
   font-weight: 600;
 }
 
 .logoutBtn {
-  margin-top: 3rem;
+  margin-top: 2rem; /* 상단 마진 축소 */
   color: var(--color-gray);
   background: none;
   border: none;
